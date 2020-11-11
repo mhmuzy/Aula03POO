@@ -6,14 +6,14 @@ public class CanetaRepository {
 	public void status(Caneta caneta) {
 		System.out.println("Modelo: " + caneta.modelo);
 		System.out.println("Uma caneta " + caneta.cor);
-		System.out.println("Ponta: " + caneta.ponta);
-		System.out.println("Carga: " + caneta.carga);
-		String resp = caneta.tampada? "Sim" : "Não";
+		System.out.println("Ponta: " + caneta.getPonta());
+		System.out.println("Carga: " + caneta.getCarga());
+		String resp = caneta.isTampada()? "Sim" : "Não";
 		System.out.println("Esta tampada? " + resp);
 	}
 	
 	public void rabiscar(Caneta caneta) {
-		if (caneta.tampada) {
+		if (caneta.isTampada()) {
 			System.out.println("ERRO! Não posso rabiscar.");
 		}
 		else {
@@ -22,10 +22,10 @@ public class CanetaRepository {
 	}
 	
 	public void tampar(Caneta caneta) {
-		caneta.tampada = true;
+		caneta.setTampada(true);;
 	}
 	
 	public void destampar(Caneta caneta) {
-		caneta.tampada = false;
+		caneta.setTampada(false);;
 	}
 }
